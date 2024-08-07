@@ -5,8 +5,6 @@ export const config = {
 };
 
 export async function middleware(req: NextRequest) {
-  const pathname = req.nextUrl.pathname;
-
   try {
     const res = NextResponse.next();
 
