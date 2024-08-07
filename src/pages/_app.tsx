@@ -1,9 +1,6 @@
 import { ClerkProvider } from "@clerk/nextjs";
-import { useAuth } from "@clerk/nextjs";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
 import Head from "next/head";
-import React, { createRef } from "react";
+import React from "react";
 import type { AppProps } from "next/app";
 
 declare global {
@@ -18,8 +15,6 @@ declare global {
 }
 
 export default function MyApp(props: AppProps) {
-  const router = useRouter();
-
   return (
     <>
       <Head>
@@ -37,10 +32,6 @@ export default function MyApp(props: AppProps) {
 }
 
 function AppLayout({ Component, pageProps }) {
-  const router = useRouter();
-
-  const { isLoaded, isSignedIn } = useAuth();
-
   return (
     <>
       <Component {...pageProps} />
